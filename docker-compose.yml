@@ -4,4 +4,11 @@ services:
     container_name: httpcheck
     ports: 
       - "8088:80"
-  
+    volumes:
+      - ./logs/requests.log:/app/requests.log:ro
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    external: true

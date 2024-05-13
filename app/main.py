@@ -7,17 +7,9 @@ logger = RequestLogger()
 @app.get("/")
 def check_root(request: Request, status_code=200):
     
-    data = {
-        'method': 'GET',
-        'message': 'Hello there :)',
-        'requested_url': request.url._url,
-        'headers': request.headers,
-        'client': request.client,    # Client who sent the request info is here(ip and port)
-    }
-
     logger.log(request, status = 200)
 
-    return data
+    return {'method': "GET", 'message': "Hello there :)"}
 
 @app.exception_handler(404)
 def catch_404(request: Request, message):
