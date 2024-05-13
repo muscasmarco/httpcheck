@@ -1,0 +1,7 @@
+services:
+  httpcheck:
+    image: muscasmarco/httpcheck:latest
+    container_name: httpcheck
+    ports: 
+      - "8088:80"
+  
