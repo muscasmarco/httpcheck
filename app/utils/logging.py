@@ -43,7 +43,3 @@ class RequestLogger:
 
         self.logger.info(msg = message)
         return
-    
-
-logger = logging.getLogger()
-
